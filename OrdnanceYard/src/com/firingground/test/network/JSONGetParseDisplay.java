@@ -45,7 +45,7 @@ public class JSONGetParseDisplay
 			}
 			catch( RuntimeException e )
 			{
-				System.out.println( "В следующий раз введите два целых числа" );
+				System.out.println( "Please, enter two integers next time" );
 			}
 		}
 	}
@@ -73,10 +73,10 @@ public class JSONGetParseDisplay
 		catch( Exception e )
 		{
 			socket.close();
-			throw new Exception( "Ошибка при отправке запроса: " + e.getMessage(), e );
+			throw new Exception( "Error occured, while sending a request: " + e.getMessage(), e );
 		}
 
-		System.out.println( "Ждем ответ сервера..." );
+		System.out.println( "Waiting for server responce..." );
 	}
 	
 	// -----------------------------------------------------------------------------------------------------------------
@@ -129,7 +129,7 @@ public class JSONGetParseDisplay
 	// -----------------------------------------------------------------------------------------------------------------
 	public void display( JSONArray jsonArr )
 	{
-		System.out.println( "\nРезультаты:\n" );
+		System.out.println( "\nResults:\n" );
 		Iterator<Object> iter = jsonArr.iterator();
 		while( iter.hasNext() )
 		{
@@ -141,5 +141,5 @@ public class JSONGetParseDisplay
 	}
 	
 	// -----------------------------------------------------------------------------------------------------------------
-		public static void main( String[] args ) throws Throwable{ new JSONGetParseDisplay( "jsonplaceholder.typicode.com" ).Main( args ); }
+	public static void main( String[] args ) throws Throwable{ new JSONGetParseDisplay( "jsonplaceholder.typicode.com" ).Main( args ); }
 }
